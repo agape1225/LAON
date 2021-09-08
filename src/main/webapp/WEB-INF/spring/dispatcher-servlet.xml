@@ -15,6 +15,14 @@
     <mvc:resources mapping="/resources/**" location="/resources/"/>
     <context:component-scan base-package="com.test"/>
 
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/admin/**" />
+            <mvc:exclude-mapping path="/admin/login/**"/>
+            <bean class="com.test.controller.adminLoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
     <!-- file upload bean -->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <!--file size-->
