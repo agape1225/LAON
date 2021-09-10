@@ -41,7 +41,7 @@ public class AdminController {
         }catch (Exception e){
             e.printStackTrace();
         }
-        return "admin/admin";
+        return "admin/dashboard-one";
     }
 
     @GetMapping("/admin/login")
@@ -51,7 +51,7 @@ public class AdminController {
         }catch (Exception e){
             e.printStackTrace();
         }
-        return "admin/admin_login";
+        return "admin/login";
     }
 
     @RequestMapping(value = "/admin/login/check.do", method = RequestMethod.POST)
