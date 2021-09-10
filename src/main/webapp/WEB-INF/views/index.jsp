@@ -8,10 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>LAON</title>
 </head>
 <body>
 <h6>MAIN PAGE</h6>
 <h1>tjdckdrbrotorrl</h1>
+
+<h6>LAON MAIN PAGE</h6>
 </body>
 </html>
