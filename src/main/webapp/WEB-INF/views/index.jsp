@@ -11,6 +11,6 @@
     <title>LAON</title>
 </head>
 <body>
-<h6>MAIN PAGE</h6>
+<h6>LAON MAIN PAGE</h6>
 </body>
 </html>
