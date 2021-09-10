@@ -59,7 +59,7 @@
                     <div class="collapse" id="forms">
                         <ul class="nav sub-menu">
                             <li class="nav-item">
-                                <a href="data-table" class="nav-link">Data Table</a>
+                                <a href="/admin/data-table" class="nav-link">Data Table</a>
                             </li>
                         </ul>
                     </div>

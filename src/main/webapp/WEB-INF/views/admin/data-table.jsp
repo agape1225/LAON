@@ -391,16 +391,32 @@
                                 <table id="dataTableExample" class="table">
                                     <thead>
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th>Salary</th>
+                                        <th>활동 이름</th>
+                                        <th>분류</th>
+                                        <th>대상</th>
+                                        <th>모집 마감일</th>
+                                        <th>포스터</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
+                                    <c:forEach varStatus="i" var="item" items="${activities}">
+
+                                        <tr>
+                                            <td>${item.name}</td>
+                                            <td>${item.category}</td>
+                                            <td>${item.target}</td>
+                                            <td>${item.date}</td>
+                                            <td><button class="btn btn-primary" onclick="window.open('${item.poster}')">이미지 보기</button></td>
+
+                                        </tr>
+
+                                        <%--<li class="data">
+                                            <p style="display: inline">${item.name}</p>
+                                            <img src="${item.poster}">
+                                            <button onclick="location.href='/admin/delete_activities.do?number=${item.num}'">삭제</button>
+                                        </li>--%>
+                                    </c:forEach>
+                                    <%--<tr>
                                         <td>Tiger Nixon</td>
                                         <td>System Architect</td>
                                         <td>Edinburgh</td>
@@ -575,7 +591,7 @@
                                         <td>40</td>
                                         <td>2009/06/25</td>
                                         <td>$675,000</td>
-                                    </tr>
+                                    </tr>--%>
                                     </tbody>
                                 </table>
                             </div>

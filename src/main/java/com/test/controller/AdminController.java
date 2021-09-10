@@ -54,6 +54,19 @@ public class AdminController {
         return "admin/login";
     }
 
+    @GetMapping("/admin/data-table")
+    public String admin_acitivities_table(Model model){
+        try{
+
+            ArrayList<ActivitiesDto_DB> activities = activitiesService.getActivities();
+            model.addAttribute("activities", activities);
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return "admin/data-table";
+    }
+
     @RequestMapping(value = "/admin/login/check.do", method = RequestMethod.POST)
     public String admin_check_login(@RequestParam(value = "id") String id,
                                     @RequestParam(value = "pw") String pw,
