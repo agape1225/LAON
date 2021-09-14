@@ -92,7 +92,7 @@
     function addActiveClass(element) {
         if (current === "") {
           //for root url
-          if (element.attr('href').indexOf("index.html") !== -1) {
+          if (element.attr('href').indexOf("index.jsp") !== -1) {
             element.parents('.nav-item').last().addClass('active');
             if (element.parents('.sub-menu').length) {
               element.closest('.collapse').addClass('show');
