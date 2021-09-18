@@ -30,8 +30,6 @@ public class ActivitiesController {
     public String create_activities(Model model){
         try{
 
-
-
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -62,9 +60,10 @@ public class ActivitiesController {
             System.out.println(aDto.getLink());
             System.out.println(aDto.getBenefits());
             System.out.println(aDto.getHost());
+            System.out.println(aDto.getPoster());
 
             String webappRoot = servletContext.getRealPath("/");
-            String relativeFolder =  "resources" + File.separator + "activities_poster" + File.separator + (aDto.getPoster()).getOriginalFilename();
+            String relativeFolder =  "resources" + "/" + "activities_poster" + "/" + (aDto.getPoster()).getOriginalFilename();
             String filename = webappRoot + relativeFolder;
             FileCopyUtils.copy((aDto.getPoster()).getBytes(), new File(filename));
 

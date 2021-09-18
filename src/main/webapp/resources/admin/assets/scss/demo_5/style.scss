@@ -1,18 +1,18 @@
 
 // Booststrap functions and variables
-@import '../../../node_modules/bootstrap/scss/functions';
-@import '../../../node_modules/bootstrap/scss/variables';
+@import '${path}/resources/admin/node_modules/bootstrap/scss/functions';
+@import '${path}/resources/admin/node_modules/bootstrap/scss/variables';
 
 // Template variables
 @import '../light/variables';
 @import './variables';
 
 // SCSS compass funtions
-@import '../../../node_modules/compass-mixins/lib/compass';
-@import '../../../node_modules/compass-mixins/lib/animate';
+@import '${path}/resources/admin/node_modules/compass-mixins/lib/compass';
+@import '${path}/resources/admin/node_modules/compass-mixins/lib/animate';
 
 // Bootstrap main SCSS
-@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+@import '${path}/resources/admin/node_modules/bootstrap/scss/bootstrap.scss';
 
 // Template mixins
 @import '../common/mixins/animation';
