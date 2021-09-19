@@ -36,16 +36,36 @@
                     <i class="link-arrow" data-feather="chevron-down"></i>
                 </a>
                 <div class="collapse">
-                    <ul class="nav sub-menu" id="form">
+                    <ul class="nav sub-menu" id="form1">
                         <li class="nav-item">
-                            <a href="/admin/data-table" class="nav-link">Data Table</a>
+                            <a href="/admin/activity_table" class="nav-link">Activities List</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/insert_activities" class="nav-link">Form Table</a>
+                            <a href="/admin/activity_insert" class="nav-link">Activity Create</a>
                         </li>
                     </ul>
                 </div>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#forms" role="button" aria-expanded="false"
+                   aria-controls="forms">
+                    <i class="link-icon" data-feather="inbox"></i>
+                    <span class="link-title">Banner</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                </a>
+                <div class="collapse">
+                    <ul class="nav sub-menu" id="form2">
+                        <li class="nav-item">
+                            <a href="/admin/activity_table" class="nav-link">Banner List</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/activity_insert" class="nav-link">Banner Create</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
         </ul>
     </div>
 </nav>

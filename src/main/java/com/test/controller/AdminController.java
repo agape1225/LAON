@@ -1,8 +1,8 @@
 package com.test.controller;
 
+import com.test.dao.ActivitiesDao;
 import com.test.dto.ActivitiesDto_DB;
 import com.test.dto.AdminLoginDto;
-import com.test.dto.TestDto;
 import com.test.service.activities.ActivitiesService;
 import com.test.service.adminLogin.AdminLoginService;
 import com.test.service.test.TestService;
@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 
@@ -41,7 +40,7 @@ public class AdminController {
         }catch (Exception e){
             e.printStackTrace();
         }
-        return "admin/dashboard-one";
+        return "admin/admin_main";
     }
 
     @GetMapping("/admin/login")
@@ -54,8 +53,8 @@ public class AdminController {
         return "admin/login";
     }
 
-    @GetMapping("/admin/data-table")
-    public String admin_acitivities_table(Model model){
+    @GetMapping("/admin/activity_table")
+    public String admin_activities_table(Model model){
         try{
 
             ArrayList<ActivitiesDto_DB> activities = activitiesService.getActivities();
@@ -64,17 +63,31 @@ public class AdminController {
         }catch (Exception e){
             e.printStackTrace();
         }
-        return "admin/data-table";
+        return "admin/activity_table";
     }
 
-    @GetMapping("/admin/insert_activities")
+    @GetMapping("/admin/activity_insert")
     public String create_activities(Model model){
         try{
 
         }catch (Exception e){
             e.printStackTrace();
         }
-        return "admin/insert_activite";
+        return "admin/activity_insert";
+    }
+
+    @RequestMapping(value = "/admin/update_activity", method = RequestMethod.GET)
+    public String update_activity(Model model, @RequestParam(value = "number") String number){
+        try{
+            System.out.println("number: " + number);
+            //activitiesService.deleteActivities(number);
+            ArrayList<ActivitiesDto_DB> activity = activitiesService.getActivity_by_num(number);
+            model.addAttribute("activity", activity.get(0));
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return "admin/activity_update";
     }
 
     @RequestMapping(value = "/admin/login/check.do", method = RequestMethod.POST)

@@ -44,6 +44,20 @@ public class ActivitiesDao {
         }
     }
 
+    public ArrayList<ActivitiesDto_DB> getActivity_by_num(String num){
+        try{
+
+            System.out.println("start getActivity_by_num Dao");
+            ActivitiesMapper activitiesMapper = sqlSession.getMapper(ActivitiesMapper.class);
+            System.out.println("end getActivity_by_num Dao");
+            return activitiesMapper.getActivity_by_num(num);
+
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public void deleteActivities(String number){
         try{
 

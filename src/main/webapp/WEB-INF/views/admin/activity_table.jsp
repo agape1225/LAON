@@ -84,7 +84,7 @@
                                             <td><button class="btn btn-primary" onclick="window.open('${path}/${item.poster}')">이미지 보기</button></td>
                                             <td>
                                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                                    <button class="btn btn-primary" onclick="location.href='/admin/lecture/edit?lecNo=${item.num}'">수정</button>
+                                                    <button class="btn btn-primary" onclick="location.href='/admin/update_activity?number=${item.num}'">수정</button>
                                                     <button class="btn btn-secondary" onclick="if(confirm('정말 삭제하시겠습니까?')){location.href='/admin/delete_activities.do?number=${item.num}';} else {return false;}">삭제</button>
                                                 </div>
                                             </td>
