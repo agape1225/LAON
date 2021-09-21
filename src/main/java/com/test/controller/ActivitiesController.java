@@ -30,8 +30,6 @@ public class ActivitiesController {
     public String create_activities(Model model){
         try{
 
-
-
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -43,6 +41,39 @@ public class ActivitiesController {
         try{
             System.out.println("number: " + number);
             activitiesService.deleteActivities(number);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return "redirect:/admin";
+    }
+
+
+    @RequestMapping(value = "/admin/update_activity/update.do", method = RequestMethod.POST)
+    public String update_activities(Model model,
+                                    ActivitiesDto aDto, @RequestParam(value = "num") String num){
+        try{
+
+            System.out.println("Start insert_activities");
+            System.out.println(aDto.getName());
+            System.out.println(aDto.getCategory());
+            System.out.println(aDto.getTarget());
+            System.out.println(aDto.getDate());
+            System.out.println(aDto.getLink());
+            System.out.println(aDto.getBenefits());
+            System.out.println(aDto.getHost());
+            System.out.println(aDto.getPoster());
+
+            String webappRoot = servletContext.getRealPath("/");
+            String relativeFolder =  "resources" + "/" + "activities_poster" + "/" + (aDto.getPoster()).getOriginalFilename();
+            String filename = webappRoot + relativeFolder;
+            FileCopyUtils.copy((aDto.getPoster()).getBytes(), new File(filename));
+
+            activitiesService.updateActivities(aDto.getName(), aDto.getCategory(), aDto.getTarget(),
+                    aDto.getDate(), aDto.getLink(), relativeFolder, aDto.getBenefits(), aDto.getHost(),num);
+
+            System.out.println(filename);
+            System.out.println("End insert_activities");
+
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -62,9 +93,10 @@ public class ActivitiesController {
             System.out.println(aDto.getLink());
             System.out.println(aDto.getBenefits());
             System.out.println(aDto.getHost());
+            System.out.println(aDto.getPoster());
 
             String webappRoot = servletContext.getRealPath("/");
-            String relativeFolder =  "resources" + File.separator + "activities_poster" + File.separator + (aDto.getPoster()).getOriginalFilename();
+            String relativeFolder =  "resources" + "/" + "activities_poster" + "/" + (aDto.getPoster()).getOriginalFilename();
             String filename = webappRoot + relativeFolder;
             FileCopyUtils.copy((aDto.getPoster()).getBytes(), new File(filename));
 

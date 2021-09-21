@@ -20,4 +20,6 @@ public interface ActivitiesMapper {
                           @Param("link") String link, @Param("poster") String poster,
                           @Param("benefits") String benefits,@Param("host") String host,
                           @Param("num") String num);
+
+    ArrayList<ActivitiesDto_DB> getActivity_by_num(@Param("num") String num);
 }

@@ -38,4 +38,9 @@ public class ActivitiesServiceImp implements ActivitiesService {
         activitiesDao.updateActivities(name, category, target, date, link, poster, benefits, host, num);
 
     }
+
+    @Override
+    public ArrayList<ActivitiesDto_DB> getActivity_by_num(String num) {
+        return activitiesDao.getActivity_by_num(num);
+    }
 }

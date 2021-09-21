@@ -14,6 +14,10 @@
         select * from activities
     </select>
 
+    <select id="getActivity_by_num" resultType="ActivitiesDto_DB">
+        select * from activities where num = #{num}
+    </select>
+
     <delete id="deleteActivities">
         delete from activities where num=${number}
     </delete>
