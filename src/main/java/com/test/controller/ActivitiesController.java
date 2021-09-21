@@ -3,6 +3,7 @@ package com.test.controller;
 import com.test.dto.ActivitiesDto;
 import com.test.dto.ActivitiesDto_DB;
 import com.test.service.activities.ActivitiesService;
+import com.utility.Utility;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.rmi.CORBA.Util;
 import javax.servlet.ServletContext;
 import java.io.File;
 import java.util.ArrayList;
@@ -25,6 +27,8 @@ public class ActivitiesController {
 
     @Autowired
     ServletContext servletContext;
+
+    Utility utility = new Utility();
 
     @GetMapping("/admin/create_activities")
     public String create_activities(Model model){
@@ -96,7 +100,7 @@ public class ActivitiesController {
             System.out.println(aDto.getPoster());
 
             String webappRoot = servletContext.getRealPath("/");
-            String relativeFolder =  "resources" + "/" + "activities_poster" + "/" + (aDto.getPoster()).getOriginalFilename();
+            String relativeFolder =  "resources" + "/" + "activities_poster" + "/"  + utility.getData() + (aDto.getPoster()).getOriginalFilename();
             String filename = webappRoot + relativeFolder;
             FileCopyUtils.copy((aDto.getPoster()).getBytes(), new File(filename));
 

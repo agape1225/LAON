@@ -57,10 +57,10 @@
                 <div class="collapse">
                     <ul class="nav sub-menu" id="form2">
                         <li class="nav-item">
-                            <a href="/admin/activity_table" class="nav-link">Banner List</a>
+                            <a href="/admin/banner_table" class="nav-link">Banner List</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/activity_insert" class="nav-link">Banner Create</a>
+                            <a href="/admin/banner_insert" class="nav-link">Banner Create</a>
                         </li>
                     </ul>
                 </div>
