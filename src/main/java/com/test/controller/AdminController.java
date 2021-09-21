@@ -132,6 +132,8 @@ public class AdminController {
         try{
 
             ArrayList<BannerDto> bannerList = bannerService.getBanner();
+           /* model.addAttribute("banner1", bannerList.get(0));
+            model.addAttribute("banner2", bannerList.get(1));*/
             model.addAttribute("banners", bannerList);
 
         }catch (Exception e){

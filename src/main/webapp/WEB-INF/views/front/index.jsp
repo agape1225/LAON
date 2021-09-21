@@ -58,6 +58,7 @@
       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
       <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
 --%>
+
    </head>
    <!-- body -->
    <body class="main-layout">
@@ -117,10 +118,12 @@
                      <!-- The slideshow -->
                      <div class="carousel-inner">
                         <div class="carousel-item active">
-                           <img src="${path}/resources/front/images/slider_1.png" alt="#" />
+                           <img src="${path}/resources/front/images/banner1.PNG" alt="#" />
+                            <%--<img class="bannerImg" src="${banner1.poster}"/>--%>
                         </div>
                         <div class="carousel-item">
-                           <img src="${path}/resources/front/images/slider_1.png" alt="#" />
+                           <img src="${path}/resources/front/images/banner2.PNG" alt="#" />
+                            <%--<img class="bannerImg" src="${banner2.poster}"/>--%>
                         </div>
                      </div>
                      <!-- Left and right controls -->

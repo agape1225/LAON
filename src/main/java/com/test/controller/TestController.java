@@ -1,6 +1,8 @@
 package com.test.controller;
 
+import com.test.dto.BannerDto;
 import com.test.dto.TestDto;
+import com.test.service.banner.BannerService;
 import com.test.service.test.TestService;
 import com.test.util.firebase.FirebaseMessagingSnippets;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,8 @@ import java.util.ArrayList;
 public class TestController {
 
     @Autowired
+    BannerService bannerService;
+    @Autowired
     TestService testService;
     @Autowired
     FirebaseMessagingSnippets firebaseMessagingSnippets;
@@ -25,6 +29,10 @@ public class TestController {
     @GetMapping("/")
     public String main(Model model){
         try{
+
+            ArrayList<BannerDto> bannerList = bannerService.getBanner();
+            model.addAttribute("banner1", bannerList.get(0));
+            model.addAttribute("banner2", bannerList.get(1));
 
         }catch (Exception e){
             e.printStackTrace();
