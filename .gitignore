@@ -4,3 +4,6 @@ aws_s3.*
 *.iml
 target/*
 src/main/webapp/WEB-INF/spring/applicationContext.xml
+
+### 비밀키 ###
+secrets/
