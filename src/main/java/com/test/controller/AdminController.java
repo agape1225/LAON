@@ -3,8 +3,10 @@ package com.test.controller;
 import com.test.dao.ActivitiesDao;
 import com.test.dto.ActivitiesDto_DB;
 import com.test.dto.AdminLoginDto;
+import com.test.dto.BannerDto;
 import com.test.service.activities.ActivitiesService;
 import com.test.service.adminLogin.AdminLoginService;
+import com.test.service.banner.BannerService;
 import com.test.service.test.TestService;
 import com.test.util.firebase.FirebaseMessagingSnippets;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +31,8 @@ public class AdminController {
     FirebaseMessagingSnippets firebaseMessagingSnippets;
     @Autowired
     ActivitiesService activitiesService;
+    @Autowired
+    BannerService bannerService;
 
     @GetMapping("/admin")
     public String admin_main(Model model){
@@ -122,4 +126,31 @@ public class AdminController {
         }
         return "redirect:/admin/login";
     }
+
+    @GetMapping("/admin/banner_table")
+    public String banner_table(Model model){
+        try{
+
+            ArrayList<BannerDto> bannerList = bannerService.getBanner();
+           /* model.addAttribute("banner1", bannerList.get(0));
+            model.addAttribute("banner2", bannerList.get(1));*/
+            model.addAttribute("banners", bannerList);
+
+        }catch (Exception e){
+
+            e.printStackTrace();
+        }
+        return "admin/banner_table";
+    }
+
+    @GetMapping("/admin/banner_insert")
+    public String create_banner(Model model){
+        try{
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return "admin/banner_insert";
+    }
+
 }

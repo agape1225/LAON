@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.mapper.BannerMapper">
+    <insert id="addBanner">
+        insert into
+        banner(poster, paragraph)
+        VALUES(#{poster}, #{paragraph})
+    </insert>
+
+    <select id="getBanners" resultType="BannerDto">
+        select * from banner
+    </select>
+
+    <delete id="deleteBanner">
+        delete from banner where num=${number}
+    </delete>
+
+
+</mapper>
