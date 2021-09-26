@@ -43,7 +43,7 @@ public class BannerController {
 
 
             String webappRoot = servletContext.getRealPath("/");
-            String relativeFolder =  "resources" + "/" + "activities_poster" + "/" + utility.getData() +poster.getOriginalFilename() + utility.getData();;
+            String relativeFolder =  "resources" + "/" + "activities_poster" + "/" + utility.getData() +poster.getOriginalFilename();
             String filename = webappRoot + relativeFolder;
             FileCopyUtils.copy(poster.getBytes(), new File(filename));
 
