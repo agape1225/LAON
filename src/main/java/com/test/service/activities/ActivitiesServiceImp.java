@@ -14,9 +14,9 @@ public class ActivitiesServiceImp implements ActivitiesService {
 
     @Override
     public void addActivities(String name, String category, String target, String date,
-                              String link, String poster, String benefits, String host) {
+                              String link, String poster, String benefits, String host, String detail) {
 
-        activitiesDao.addActivities(name, category, target, date, link, poster, benefits, host);
+        activitiesDao.addActivities(name, category, target, date, link, poster, benefits, host, detail);
 
     }
 
@@ -33,14 +33,20 @@ public class ActivitiesServiceImp implements ActivitiesService {
     @Override
     public void updateActivities(String name, String category, String target, String date,
                                  String link, String poster, String benefits, String host,
-                                 String num) {
+                                 String num, String detail) {
 
-        activitiesDao.updateActivities(name, category, target, date, link, poster, benefits, host, num);
+        activitiesDao.updateActivities(name, category, target, date, link, poster, benefits, host, num, detail);
 
     }
 
     @Override
     public ArrayList<ActivitiesDto_DB> getActivity_by_num(String num) {
         return activitiesDao.getActivity_by_num(num);
+    }
+
+    @Override
+    public ArrayList<ActivitiesDto_DB> getActivity_by_category(String category) {
+
+        return activitiesDao.getActivity_by_category(category);
     }
 }

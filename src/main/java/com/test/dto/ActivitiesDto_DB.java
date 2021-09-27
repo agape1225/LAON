@@ -15,4 +15,5 @@ public class ActivitiesDto_DB {
     String poster;
     String benefits;
     String host;
+    String detail;
 }

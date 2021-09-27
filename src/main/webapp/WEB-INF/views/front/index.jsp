@@ -68,7 +68,8 @@
       </div>
       <!-- end loader -->
       <!-- header -->
-      <header>
+      <jsp:include page="${path}/WEB-INF/views/front/header.jsp"/>
+      <%--<header>
          <!-- header inner -->
          <div class="container-fluid">
             <div class="row">
@@ -85,19 +86,19 @@
                         <nav class="main-menu">
                            <ul class="menu-area-main">
                               <li class="active">
-                                 <a href="index.jsp">Home</a>
+                                 <a href="/">Home</a>
                               </li>
                               <li>
-                                 <a href="about.html">대외활동</a>
+                                 <a href="/activities">대외활동</a>
                               </li>
                               <li>
-                                 <a href="marketing.html">공모전</a>
+                                 <a href="/competition">공모전</a>
                               </li>
                               <li>
-                                 <a href="blog.html">교내활동</a>
+                                 <a href="/onCampus">교내활동</a>
                               </li>
                               <li>
-                                 <a href="contact.html">교내소식</a>
+                                 <a href="/news">교내소식</a>
                               </li>
                            </ul>
                         </nav>
@@ -106,8 +107,8 @@
                </div>
             </div>
          </div>
+      </header>--%>
          <!-- end header inner -->
-      </header>
       <!-- end header -->
       <!-- revolution slider -->
       <div class="banner-slider">

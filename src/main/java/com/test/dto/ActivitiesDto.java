@@ -17,4 +17,5 @@ public class ActivitiesDto {
     MultipartFile poster;
     String benefits;
     String host;
+    String detail;
 }

@@ -60,12 +60,13 @@
                 <div class="form-group">
                   <label for="exampleInputText1">CATEGORY</label>
                   <select style="color: black" id="exampleInputText1" name="category" oninput="btn_status()">
-                    <option value="취미">서포터즈</option>
-                    <option value="수익 창출">기자단</option>
-                    <option value="직무교육">멘토링</option>
-                    <option value="데이터 · 개발">교내활동</option>
-                    <option value="시그니처">공모전</option>
-                    <option value="키즈">인턴쉽</option>
+                    <option value="서포터즈">서포터즈</option>
+                    <option value="기자단">기자단</option>
+                    <option value="멘토링">멘토링</option>
+                    <option value="교내활동">교내활동</option>
+                    <option value="공모전">공모전</option>
+                    <option value="인턴쉽">인턴쉽</option>
+                    <option value="대외활동">대외활동</option>
                   </select>
                 </div>
 
@@ -102,6 +103,13 @@
                   <input type="text" oninput="btn_status()" class="form-control"
                          id="exampleInputText6"
                          placeholder="host" name="host" value="${activity.host}">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputText2">DETAIL</label>
+                  <input type="text" oninput="btn_status()" class="form-control"
+                         id="exampleInputText7"
+                         placeholder="detail" name="detail" value="${activity.detail}">
                 </div>
 
                 <div class="form-group">

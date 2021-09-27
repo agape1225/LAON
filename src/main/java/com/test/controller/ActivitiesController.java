@@ -73,7 +73,7 @@ public class ActivitiesController {
             FileCopyUtils.copy((aDto.getPoster()).getBytes(), new File(filename));
 
             activitiesService.updateActivities(aDto.getName(), aDto.getCategory(), aDto.getTarget(),
-                    aDto.getDate(), aDto.getLink(), relativeFolder, aDto.getBenefits(), aDto.getHost(),num);
+                    aDto.getDate(), aDto.getLink(), relativeFolder, aDto.getBenefits(), aDto.getHost(),num, aDto.getDetail());
 
             System.out.println(filename);
             System.out.println("End insert_activities");
@@ -98,6 +98,7 @@ public class ActivitiesController {
             System.out.println(aDto.getBenefits());
             System.out.println(aDto.getHost());
             System.out.println(aDto.getPoster());
+            System.out.println(aDto.getPoster());
 
             String webappRoot = servletContext.getRealPath("/");
             String relativeFolder =  "resources" + "/" + "activities_poster" + "/"  + utility.getData() + (aDto.getPoster()).getOriginalFilename();
@@ -105,7 +106,8 @@ public class ActivitiesController {
             FileCopyUtils.copy((aDto.getPoster()).getBytes(), new File(filename));
 
             activitiesService.addActivities(aDto.getName(), aDto.getCategory(), aDto.getTarget(),
-                    aDto.getDate(), aDto.getLink(), relativeFolder, aDto.getBenefits(), aDto.getHost());
+                    aDto.getDate(), aDto.getLink(), relativeFolder, aDto.getBenefits(),
+                    aDto.getHost(), aDto.getDetail());
 
             System.out.println(filename);
             System.out.println("End insert_activities");

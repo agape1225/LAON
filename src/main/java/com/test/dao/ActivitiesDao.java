@@ -17,12 +17,12 @@ public class ActivitiesDao {
     SqlSession sqlSession;
 
     public void addActivities(String name, String category, String target, String date,
-                         String link, String poster, String benefits, String host){
+                         String link, String poster, String benefits, String host, String detail){
         try{
 
             System.out.println("start addActivities Dao");
             ActivitiesMapper activitiesMapper = sqlSession.getMapper(ActivitiesMapper.class);
-            activitiesMapper.addActivities(name, category, target, date, link, poster, benefits, host);
+            activitiesMapper.addActivities(name, category, target, date, link, poster, benefits, host, detail);
             System.out.println("end addActivities Dao");
 
         }catch (Exception e){
@@ -58,6 +58,20 @@ public class ActivitiesDao {
         }
     }
 
+    public ArrayList<ActivitiesDto_DB> getActivity_by_category(String category){
+        try{
+
+            System.out.println("start getActivity_by_num Dao");
+            ActivitiesMapper activitiesMapper = sqlSession.getMapper(ActivitiesMapper.class);
+            System.out.println("end getActivity_by_num Dao");
+            return activitiesMapper.getActivity_by_category(category);
+
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public void deleteActivities(String number){
         try{
 
@@ -73,12 +87,13 @@ public class ActivitiesDao {
     }
 
     public void updateActivities(String name, String category, String target, String date,
-                                 String link, String poster, String benefits, String host, String num){
+                                 String link, String poster, String benefits, String host,
+                                 String num, String detail){
         try{
 
             System.out.println("start deleteActivities Dao");
             ActivitiesMapper activitiesMapper = sqlSession.getMapper(ActivitiesMapper.class);
-            activitiesMapper.updateActivities(name, category, target, date, link, poster, benefits, host, num);
+            activitiesMapper.updateActivities(name, category, target, date, link, poster, benefits, host, num, detail);
             System.out.println("end deleteActivities Dao");
 
         }catch (Exception e){
