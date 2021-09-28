@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.mapper.CampusinfoMapper">
+    <insert id="addCampusinfo">
+        insert into
+        campus_info(title, subtitle, contexts, host, department, file)
+        VALUES(#{title}, #{subtitle}, #{contexts},#{host},#{department}, #{file})
+    </insert>
+
+    <select id="getCampusinfo" resultType="CampusinfoDto_DB">
+        select * from campus_info
+    </select>
+
+    <select id="getCampusinfo_by_department" resultType="CampusinfoDto_DB">
+        select * from campus_info where department = #{department}
+    </select>
+
+    <delete id="deleteCampusinfo">
+        delete from campus_info where num=${number}
+    </delete>
+
+    <update id="updateCampusinfo">
+        update campus_info
+        set title=#{title}, subtitle=#{subtitle}, contexts=#{contexts},
+            host=#{host}, department=#{department}, file=#{file}
+        where num = #{num}
+    </update>
+</mapper>
