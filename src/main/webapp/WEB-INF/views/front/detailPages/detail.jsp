@@ -15,18 +15,11 @@
 <html lang="en">
 <head>
     <style>
-        html,body{width:100%; height: 100%;margin:0; padding:0;}
-        .footer{margin-top: 80%;}
-        .notice-box{background-color: #f0f0f0; width:80%; border-width: 3px; border-style:solid; border-color: #0c1427; position: absolute; left: 10%;}
-        #close{float:right;display:inline-block;padding:20px 45px;font-weight: 700;text-shadow: 0 1px 0 #fff;font-size: 3.3rem; }
-        #close:hover{border: 0;cursor:pointer;opacity:.75; }
-        .window_title{font-size: 50px; text-align: center; font-weight:bold; padding-top: 80px; color: #0c1427;}
-        .window_img{float:left; padding-left: 3%; margin-right: 4%;}
-        .window_infor{float:left; padding-top:15%; font-size:30px; font-weight:500; color: #0c1427;}
-        .apply{width:100%; background-color: #B6BDD7; text-align: center;}
-        .apply:hover{background-color: #4E5467;}
-        .detail_content{float:left; padding-left:3%; padding-top:3%;font-size:25px; font-weight:bold; color: #0c1427;}
-        .detail_content p{color:#0c1427; font-size:23px; font-weight: 500; padding-bottom: 40px;}
+        .full blog_cont p{color:#0c1427; font-size:23px; font-weight: 500; padding-bottom: 40px;}
+        html,body{width: 100%; height: 100%;}
+        .detail_content{font-weight:600;}
+        .apply{width:100%; background-color: #B6BDD7; text-align: center; margin-top: 20px;}
+        .apply:hover{background-color: #697087;}
     </style>
     <!-- basic -->
     <meta charset="utf-8">
@@ -74,58 +67,121 @@
 --%>
 </head>
 <!-- body -->
-<body class="main-layout" style="background-color:#E9EBF3;">
+<body class="main-layout">
 <!-- loader  -->
 <div class="loader_bg">
     <div class="loader"><img src="${path}/resources/front/images/loading.gif" alt="" /></div>
 </div>
-
-<div class="notice-box" style="background-color: white;">
-    <span id="close" onclick="this.parentNode.style.display = 'none';">&times;</span>
-    <div class="window_title">[대외활동] 인문 360 온라인 모니터링단 1기 모집</div>
-    <hr>
-    <div class="content">
-        <div class="window_img"><img src="${path}/resources/front/images/window_img.jpg" width="600" height="600" alt="#"></div>
-        <div class="window_infor"><pre>
-분      야
-활  동  명
-주최, 주관
-접 수 기 간
-        </pre></div>
-        <div class="window_infor"><pre>
-: 기타
-: 2021 부산국제트래블마트 서포터즈
-: 부산광역시/부산광역시관광협회
-: 2021.09.02(목) ~ 09.08(금)
-        </pre>
-            <div class="apply">
-                <a href="about.html" style="color: white;">apply to</a>
+<!-- end loader -->
+<!-- header -->
+<jsp:include page="${path}/WEB-INF/views/front/header.jsp"/>
+<!-- end header -->
+<div class="Marketing-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="Marketingheading">
+                    <h3 style="font-size: 40px; text-align: center; font-weight: 550; color: #0c1427;">Detail</h3>
+                </div>
             </div>
         </div>
     </div>
-    <div class="detail_content">
-        <p style="font-size: 30px; font-weight: 550; color: #0c1427;">상세내용</p>
-        ○ 활동 내용
-        <p>
-            인문360 사이트 및 콘텐츠 모니터링
-            월 1회 모니터링 보고서 제출
-            인문360 사이트: https://inmun360.culture.go.kr/</p>
+</div>
+<!-- section -->
+<div class="section layout_padding dark_bg" style="background-color:#E9EBF3;">
+    <div class="container">
+        <div class="row" >
+            <div class="col-md-6" style="display: inline-block;">
+                <img src="${path}/resources/front/images/test_sunny.jpg" width="500" height="600" alt="#" />
+            </div>
+            <div class="col-md-6" style="color: #f0f0f0;">
+                <div class="full blog_cont" style=" float: left;">
+                    <h3 class="white_font" style="font-size: 40px; float: left; ">[대외활동] 인문 360 온라인 모니터링단 1기 모집</h3>
+                    <div class="content" >
+                        <div class="window_font" style="color: #0c1427;  float: left; font-size:20px; font-weight:700; float: left; padding-top:60px;">
+                            <div>분      야</div>
+                            <div>활  동  명</div>
+                            <div>주최, 주관</div>
+                            <div>접 수 기 간</div>
+                        </div>
+                        <div class="window_infor" style="color: #0c1427;float: left; padding-left:40px;font-size:20px; font-weight:700; padding-top:60px;float: left;">
+                            <div>기타</div>
+                            <div>2021 부산국제트래블마트 서포터즈</div>
+                            <div>부산광역시/부산광역시관광협회</div>
+                            <div>2021.09.02(목) ~ 09.08(금)</div>
+                            <div class="apply" style="float: left;">
+                                <a href="https://www.besunny.com/main/sunny/notice/mainNoticeView.do" style="color: white;">apply to</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        ○ 자격요건
-        <p>
-            인문 콘텐츠에 관심을 가지고 적극적으로 참여를 희망하는 자</p>
-
-        ○ 지원방법
-        <p>
-            네이버폼 설문 응답
-            지원 링크: http://naver.me/5s9pMnZ1</p>
-
-        ○ 활동일정
-        <p>
-            모집기간: 9.1.(수) ~ 9.13.(월)
-            선정발표: 9.24.(금)</p>
     </div>
 </div>
+</div>
+<!-- end section -->
+
+<!-- section -->
+<div class="section layout_padding">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="full blog_cont" style="font-size:25px; font-weight:bold; color: #0c1427;">
+                    <p style="font-size: 30px; font-weight: 550; color: #0c1427;">Detail</p>
+                    <br>
+                    ○ 활동 내용
+                    <p class="detail_content">
+                        인문360 사이트 및 콘텐츠 모니터링
+                        월 1회 모니터링 보고서 제출
+                        인문360 사이트: https://inmun360.culture.go.kr/</p>
+                    <br>
+                    ○ 자격요건
+                    <p class="detail_content">
+                        인문 콘텐츠에 관심을 가지고 적극적으로 참여를 희망하는 자</p>
+                    <br>
+                    ○ 지원방법
+                    <p class="detail_content">
+                        네이버폼 설문 응답
+                        지원 링크: http://naver.me/5s9pMnZ1</p>
+                    <br>
+                    ○ 활동일정
+                    <p class="detail_content">
+                        모집기간: 9.1.(수) ~ 9.13.(월)
+                        선정발표: 9.24.(금)</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- footer -->
+<footer>
+    <div class="container" >
+        <div class="row">
+            <div class="col-lg-4 col-md-6" >
+                <div class="footer_thanks">
+                    <h1>THANK YOU</h1>
+                    <p>Only for Kangnam university students</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="footer_links" >
+                    <h3>Position</h3>
+                    <p>Front 201904014 김다은, 201904054 서다혜<br>
+                        Back  201904009 구나영, 201904055 성창규<br>
+                        Data  201904131 황진영</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer -->
 <!-- Javascript files-->
 <script src="${path}/resources/front/js/jquery.min.js"></script>
 <script src="${path}/resources/front/js/popper.min.js"></script>

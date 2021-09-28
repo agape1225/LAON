@@ -117,7 +117,7 @@ public class TestController {
         }catch (Exception e){
             e.printStackTrace();
         }
-        return "front/detailPages/oncampus";
+        return "front/detailPages/detail";
     }
 
     @RequestMapping(value = "/get.do", method = RequestMethod.GET)
