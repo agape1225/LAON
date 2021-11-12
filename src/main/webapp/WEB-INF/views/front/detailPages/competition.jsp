@@ -17,6 +17,7 @@
     <style>
         .top{display:inline-block;}
         .carousel-inner{padding-bottom: 20px;}
+        .carousel-inner, .order{background-color: #E9EBF3;}
         #foryou{font-size: 50px;font-weight: 700; margin-left: 50px; color:#4E5467;}
         #recent, #imminent
         {background-color: transparent; padding-top: 35px; padding-left:15px; font-weight: bold;}
@@ -26,14 +27,16 @@
         {color:#697087;}
         #recent:active, #imminent:active,#all:active,#video:active,#idea:active,#startup:active,#engineer:active,#market:hover,#design:hover,#it:hover,#etc:active,.order_num:active
         {color:#697087;}
-        .div_img{ width: 350px; max-height: 350px; overflow: hidden;}
-        .card-img-top{max-height: initial; width:100%;}
-        .card-text{ text-align: left; font-size: 30px; padding-left: 10px; width: 300px; height: 200px;}
-        .card-body{height: 200px;}
         .order{text-align: center;}
         .prebtn,.nextbtn{background-color: transparent; font-size: 20px; color:#4E5467; }
         .order_num{background-color: transparent; font-size: 20px; padding:10px; border: 1px solid #E9EBF3;}
-        .carousel-inner, .order{background-color: #E9EBF3;}
+        .card-text{ text-align: left; font-size: 30px; padding-left: 10px; width: 300px; height: 200px;}
+
+        .col-md-3{max-height: 500px; overflow: hidden;}
+        .div_img{height: 300px; overflow:hidden;}
+        .card-img-top{max-width: 100%;}
+        .card_body{background-color: #0a7137}
+
     </style>
     <!-- basic -->
     <meta charset="utf-8">
@@ -161,7 +164,67 @@
         <!--/.Slides-->
     </div>
 
+    <!--Slides-->
+    <div class="carousel-inner">
+        <!--First slide-->
+        <div class="col-md-3" style="float:left">
+            <div class="card mb-2">
+                <div class="div_img">
+                    <img class="card-img-top"
+                         src="${path}/resources/front/images/item_poster.jpg" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">D-DAY</h4>
+                    <div class="card-text">
+                        <p>card_title</p><p>card_field</p></div>
+                </div>
+            </div>
+        </div>
 
+        <div class="col-md-3" style="float:left">
+            <div class="card mb-2">
+                <div class="div_img">
+                    <img class="card-img-top"
+                         src="${path}/resources/front/images/test_img.jpg" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">D-DAY</h4>
+                    <div class="card-text">
+                        <p>card_title</p><p>card_field</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3" style="float:left">
+            <div class="card mb-2">
+                <div class="div_img">
+                    <img class="card-img-top"
+                         src="${path}/resources/front/images/test_img2.jpg" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">D-DAY</h4>
+                    <div class="card-text">
+                        <p>card_title</p><p>card_field</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3" style="float:left">
+            <div class="card mb-2">
+                <div class="div_img">
+                    <img class="card-img-top"
+                         src="${path}/resources/front/images/test_img3.png" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">D-DAY</h4>
+                    <div class="card-text">
+                        <p>card_title</p><p>card_field</p></div>
+                </div>
+            </div>
+        </div>
+        <!--/.First slide-->
+        <!--/.Slides-->
+    </div>
 
     <div class="order"><button class="prebtn">&lt</button><button class="order_num">1</button><button class="order_num">2</button><button class="order_num">3</button><button class="order_num">4</button><button class="order_num">5</button><button class="order_num">6</button><button class="order_num">7</button><button class="order_num">8</button><button class="order_num">9</button><button class="nextbtn">&gt</button></div>
 
