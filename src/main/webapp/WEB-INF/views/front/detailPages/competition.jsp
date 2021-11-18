@@ -20,7 +20,7 @@
         .carousel-inner, .order{background-color: #E9EBF3;}
         #foryou{font-size: 50px;font-weight: 700; margin-left: 50px; color:#4E5467;}
         #recent, #imminent
-        {background-color: transparent; padding-top: 35px; padding-left:15px; font-weight: bold;}
+        {background-color: transparent; padding-top:40px; padding-left:15px; font-weight: bold;}
         #all,#video,#idea,#startup,#engineer,#market,#design,#it,#etc
         {background-color: transparent; padding-top: 35px; padding-right:40px; font-weight: bold;}
         #recent:hover, #imminent:hover,#all:hover,#video:hover,#idea:hover,#startup:hover,#engineer:hover,#market:hover,#design:hover,#it:hover,#etc:hover,.order_num:hover
@@ -33,8 +33,8 @@
         .card-text{ text-align: left; font-size: 30px; padding-left: 10px; width: 300px; height: 200px;}
 
         .col-md-3{max-height: 500px; overflow: hidden;}
-        .div_img{height: 300px; overflow:hidden;}
-        .card-img-top{max-width: 100%;}
+        .div_img{height: 300px; object-fit: fill;}
+        .card-img-top{max-width: 100%; object-fit: cover; object-position:top; height: 300px;}
 
         .menuNav li:hover {
             border-radius:5px;
@@ -63,8 +63,8 @@
             text-decoration:none;
         }
 
-        /* ############ 767px 이하 ############ */
-        @media(max-width:767px) {
+        /* ############ 1070px 이하 ############ */
+        @media(max-width:1070px) {
 
             /* 토글 버튼 */
             .menuBtn {
@@ -72,15 +72,15 @@
                 padding-left:10px;
                 padding-right:10px;
                 padding-bottom:2px;
-                border:1px solid #AAAAAA;
                 border-radius:5px;
-                background-color:#FFFFFF;
+                background-color:#B6BDD7;
                 cursor:pointer;
+                height: 50px;
             }
 
             /* 클릭시 배경색 변경 */
             .menuBtn:hover {
-                background-color:#DDDDDD;
+                background-color:#697087;
             }
 
             /* 파란색 테두리 제거 */
@@ -91,11 +91,13 @@
             .menuBtn i {
                 color:#888888;
             }
-
-            /* 토글버튼 글자 숨기기 */
-            .menuBtn span {
-                display:inline-block;
-                text-indent:-999px;
+            .menuBtn img {
+                float:right;
+                padding-right: 20px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                width: 45px;
+                height: 30px;
             }
 
             .menuNav {
@@ -103,8 +105,8 @@
             }
         }
 
-        /* ############ 768px 이상 ############ */
-        @media(min-width:768px) {
+        /* ############ 1071px 이상 ############ */
+        @media(min-width:1071px) {
 
             /* 토글 버튼 */
             .menuBtn {
@@ -201,7 +203,7 @@
         <div style="float:left"><button id="recent">• 최신순</button><button id="imminent">• 마감임박순</button></div>
     </div>
     <button type="button" class="menuBtn">
-        <i><img src="${path}/resources/front/images/nav-icon.png" alt="#"></i><span>MENU</span>
+        <i><img src="${path}/resources/front/images/nav-icon.png" alt="#"></i>
     </button>
     <nav class="menuNav" id="menuNav">
         <ul>
