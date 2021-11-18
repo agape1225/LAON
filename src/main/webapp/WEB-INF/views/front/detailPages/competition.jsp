@@ -35,9 +35,107 @@
         .col-md-3{max-height: 500px; overflow: hidden;}
         .div_img{height: 300px; overflow:hidden;}
         .card-img-top{max-width: 100%;}
-        .card_body{background-color: #0a7137}
+
+        .menuNav li:hover {
+            border-radius:5px;
+            color:#697087;
+        }
+
+        .menuNav ul {
+            margin-left: 30px;
+            padding:0;
+            list-style:none;
+        }
+
+        .menuNav ul:after {
+            content:"";
+            display:block;
+            clear:both;
+        }
+
+        .menuNav li button {
+            display:block;
+            padding-left:15px;
+            padding-right:15px;
+            padding-bottom:20px;
+            color:#000000;
+            font-size:13px;
+            text-decoration:none;
+        }
+
+        /* ############ 767px 이하 ############ */
+        @media(max-width:767px) {
+
+            /* 토글 버튼 */
+            .menuBtn {
+                padding-top:6px;
+                padding-left:10px;
+                padding-right:10px;
+                padding-bottom:2px;
+                border:1px solid #AAAAAA;
+                border-radius:5px;
+                background-color:#FFFFFF;
+                cursor:pointer;
+            }
+
+            /* 클릭시 배경색 변경 */
+            .menuBtn:hover {
+                background-color:#DDDDDD;
+            }
+
+            /* 파란색 테두리 제거 */
+            .menuBtn:focus {
+                outline:none;
+            }
+
+            .menuBtn i {
+                color:#888888;
+            }
+
+            /* 토글버튼 글자 숨기기 */
+            .menuBtn span {
+                display:inline-block;
+                text-indent:-999px;
+            }
+
+            .menuNav {
+                display:none;
+            }
+        }
+
+        /* ############ 768px 이상 ############ */
+        @media(min-width:768px) {
+
+            /* 토글 버튼 */
+            .menuBtn {
+                display:none;
+            }
+
+            /* 내비게이션 */
+            .menuNav {
+
+                /* !important는 지정한 스타일의 속성이 중요하기 때문에 변경을 막기위 해지 지정한다. */
+                display:block !important;
+            }
+
+            .menuNav li {
+                float:left;
+                width:auto;
+            }
+        }
 
     </style>
+    <script src="http://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            jQuery(".menuBtn").click(function() {
+
+                // slideToggle은 요소의 hight 값을 조작해서 움직임을 만들어 낸다.
+                // 보이면 안보이게, 안보이면 보이게 처리한다.
+                jQuery(".menuNav").slideToggle();
+            });
+        });
+    </script>
     <!-- basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -65,6 +163,8 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+
+
     <%--<!-- styles -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
@@ -97,10 +197,25 @@
 <div class="slider card">
     <!-- slider card -->
     <div class="top">
-    <div style="float:left"><h1 id="foryou">For you</h1></div>
-    <div style="float:left"><button id="recent">• 최신순</button><button id="imminent">• 마감임박순</button></div>
-    <div style="float:right; margin-right: 27px;"><button id="all">전체</button><button id="video">영상/콘텐츠</button><button id="idea">기획/아이디어</button><button id="startup">창업/스타트업</button><button id="engineer">공학/시나리오</button><button id="market">광고/마케팅</button><button id="design">디자인</button><button id="it">IT/SW</button><button id="etc">기타</button></div>
+        <div style="float:left"><h1 id="foryou">For you</h1></div>
+        <div style="float:left"><button id="recent">• 최신순</button><button id="imminent">• 마감임박순</button></div>
     </div>
+    <button type="button" class="menuBtn">
+        <i><img src="${path}/resources/front/images/nav-icon.png" alt="#"></i><span>MENU</span>
+    </button>
+    <nav class="menuNav" id="menuNav">
+        <ul>
+            <li><button id="all">전체</button></li>
+            <li><button id="video">영상/콘텐츠</button></li>
+            <li><button id="idea">기획/아이디어</button></li>
+            <li><button id="startup">창업/스타트업</button></li>
+            <li><button id="engineer">공학/시나리오</button></li>
+            <li><button id="market">광고/마케팅</button></li>
+            <li><button id="design">디자인</button></li>
+            <li><button id="it">IT/SW</button></li>
+            <li><button id="etc">기타</button></li>
+        </ul>
+    </nav>
     <!--Carousel Wrapper-->
     <!--Slides-->
     <div class="carousel-inner">
@@ -108,8 +223,8 @@
         <div class="col-md-3" style="float:left">
             <div class="card mb-2">
                 <div class="div_img">
-                <img class="card-img-top"
-                     src="${path}/resources/front/images/item_poster.jpg" alt="Card image cap">
+                    <img class="card-img-top"
+                         src="${path}/resources/front/images/item_poster.jpg" alt="Card image cap">
                 </div>
                 <div class="card-body">
                     <h4 class="card-title">D-DAY</h4>
@@ -122,8 +237,8 @@
         <div class="col-md-3" style="float:left">
             <div class="card mb-2">
                 <div class="div_img">
-                <img class="card-img-top"
-                     src="${path}/resources/front/images/test_img.jpg" alt="Card image cap">
+                    <img class="card-img-top"
+                         src="${path}/resources/front/images/test_img.jpg" alt="Card image cap">
                 </div>
                 <div class="card-body">
                     <h4 class="card-title">D-DAY</h4>
@@ -136,8 +251,8 @@
         <div class="col-md-3" style="float:left">
             <div class="card mb-2">
                 <div class="div_img">
-                <img class="card-img-top"
-                     src="${path}/resources/front/images/test_img2.jpg" alt="Card image cap">
+                    <img class="card-img-top"
+                         src="${path}/resources/front/images/test_img2.jpg" alt="Card image cap">
                 </div>
                 <div class="card-body">
                     <h4 class="card-title">D-DAY</h4>
@@ -150,8 +265,8 @@
         <div class="col-md-3" style="float:left">
             <div class="card mb-2">
                 <div class="div_img">
-                <img class="card-img-top"
-                     src="${path}/resources/front/images/test_img3.png" alt="Card image cap">
+                    <img class="card-img-top"
+                         src="${path}/resources/front/images/test_img3.png" alt="Card image cap">
                 </div>
                 <div class="card-body">
                     <h4 class="card-title">D-DAY</h4>
