@@ -42,7 +42,7 @@
         }
 
         .menuNav ul {
-            margin-left: 30px;
+            margin-left: 40px;
             padding:0;
             list-style:none;
         }
@@ -346,128 +346,7 @@
     <div class="order"><button class="prebtn">&lt</button><button class="order_num">1</button><button class="order_num">2</button><button class="order_num">3</button><button class="order_num">4</button><button class="order_num">5</button><button class="order_num">6</button><button class="order_num">7</button><button class="order_num">8</button><button class="order_num">9</button><button class="nextbtn">&gt</button></div>
 
 </div>
-<!--/.Carousel Wrapper-->
-<!-- end slider card-->
-<%--<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="poster">
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="poster">
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="poster">
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-</div>--%>
+
 <!-- footer -->
 <footer>
     <div class="container" >

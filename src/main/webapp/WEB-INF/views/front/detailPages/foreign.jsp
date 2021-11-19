@@ -15,25 +15,129 @@
 <html lang="en">
 <head>
     <style>
-        html,body{width:100%; height: 100%;}
+        .top{display:inline-block;}
+        .carousel-inner{padding-bottom: 20px;}
+        .carousel-inner, .order{background-color: #E9EBF3;}
         #foryou{font-size: 50px;font-weight: 700; margin-left: 50px; color:#4E5467;}
         #recent, #imminent
-        {background-color: transparent; padding-top: 35px; padding-left:15px; font-weight: bold;}
+        {background-color: transparent; padding-top:40px; padding-left:15px; font-weight: bold;}
         #all,#support,#report,#mentor,#volun,#etc
         {background-color: transparent; padding-top: 35px; padding-right:40px; font-weight: bold;}
         #recent:hover, #imminent:hover,#all:hover,#support:hover,#report:hover,#mentor:hover,#volun:hover,#etc:hover,.order_num:hover
         {color:#697087;}
         #recent:active, #imminent:active,#all:active,#support:active,#report:active,#mentor:active,#volun:active,#etc:active,.order_num:active
         {color:#697087;}
-        .poster{display: inline-block; margin-bottom:50px;}
-        .slider{display: inline-block; padding-left: 55px; width: 24%; height: 50px;}
-        .card_bottom{ background-color:#f0f0f0;}
-        .card_title{ text-align: left; font-size: 30px; padding-left: 10px; height: 200px;}
         .order{text-align: center;}
         .prebtn,.nextbtn{background-color: transparent; font-size: 20px; color:#4E5467; }
         .order_num{background-color: transparent; font-size: 20px; padding:10px; border: 1px solid #E9EBF3;}
+        .card-text{ text-align: left; font-size: 30px; padding-left: 10px; width: 300px; height: 200px;}
+
+        .col-md-3{max-height: 500px; overflow: hidden;}
+        .div_img{height: 300px; object-fit: fill;}
+        .card-img-top{max-width: 100%; object-fit: cover; object-position:top; height: 300px;}
+
+        .menuNav li:hover {
+            border-radius:5px;
+            color:#697087;
+        }
+
+        .menuNav ul {
+            margin-left: 40px;
+            padding:0;
+            list-style:none;
+        }
+
+        .menuNav ul:after {
+            content:"";
+            display:block;
+            clear:both;
+        }
+
+        .menuNav li button {
+            display:block;
+            padding-left:15px;
+            padding-right:15px;
+            padding-bottom:20px;
+            color:#000000;
+            font-size:13px;
+            text-decoration:none;
+        }
+
+        /* ############ 530px 이하 ############ */
+        @media(max-width:630px) {
+
+            /* 토글 버튼 */
+            .menuBtn {
+                padding-top:6px;
+                padding-left:10px;
+                padding-right:10px;
+                padding-bottom:2px;
+                border-radius:5px;
+                background-color:#B6BDD7;
+                cursor:pointer;
+                height: 50px;
+            }
+
+            /* 클릭시 배경색 변경 */
+            .menuBtn:hover {
+                background-color:#697087;
+            }
+
+            /* 파란색 테두리 제거 */
+            .menuBtn:focus {
+                outline:none;
+            }
+
+            .menuBtn i {
+                color:#888888;
+            }
+            .menuBtn img {
+                float:right;
+                padding-right: 20px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                width: 45px;
+                height: 30px;
+            }
+
+            .menuNav {
+                display:none;
+            }
+        }
+
+        /* ############ 531px 이상 ############ */
+        @media(min-width:631px) {
+
+            /* 토글 버튼 */
+            .menuBtn {
+                display:none;
+            }
+
+            /* 내비게이션 */
+            .menuNav {
+
+                /* !important는 지정한 스타일의 속성이 중요하기 때문에 변경을 막기위 해지 지정한다. */
+                display:block !important;
+            }
+
+            .menuNav li {
+                float:left;
+                width:auto;
+            }
+        }
 
     </style>
+    <script src="http://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            jQuery(".menuBtn").click(function() {
+
+                // slideToggle은 요소의 hight 값을 조작해서 움직임을 만들어 낸다.
+                // 보이면 안보이게, 안보이면 보이게 처리한다.
+                jQuery(".menuNav").slideToggle();
+            });
+        });
+    </script>
     <!-- basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -61,6 +165,8 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+
+
     <%--<!-- styles -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
@@ -80,7 +186,7 @@
 --%>
 </head>
 <!-- body -->
-<body class="main-layout" style="background-color:#E9EBF3;">
+<body class="main-layout" >
 <!-- loader  -->
 <div class="loader_bg">
     <div class="loader"><img src="${path}/resources/front/images/loading.gif" alt="" /></div>
@@ -90,176 +196,154 @@
 <jsp:include page="${path}/WEB-INF/views/front/header.jsp"/>
 <!-- end header -->
 <!-- revolution slider -->
-<div class="top">
-    <br>
-    <div style="float:left"><h1 id="foryou">For you</h1></div>
-    <div style="float:left"><button id="recent">• 최신순</button><button id="imminent">• 마감임박순</button></div>
-    <div style="float:right; margin-right: 27px;"><button id="all">전체</button><button id="support">서포터즈</button><button id="report">기자단</button><button id="mentor">멘토링</button><button id="volun">봉사활동</button><button id="etc">기타</button></div>
+<div class="slider card">
+    <!-- slider card -->
+    <div class="top">
+        <div style="float:left"><h1 id="foryou">For you</h1></div>
+        <div style="float:left"><button id="recent">• 최신순</button><button id="imminent">• 마감임박순</button></div>
+    </div>
+    <button type="button" class="menuBtn">
+        <i><img src="${path}/resources/front/images/nav-icon.png" alt="#"></i>
+    </button>
+    <nav class="menuNav" id="menuNav">
+        <ul>
+            <li><button id="all">전체</button></li>
+            <li><button id="support">서포터즈</button></li>
+            <li><button id="report">기자단</button></li>
+            <li><button id="mentor">멘토링</button></li>
+            <li><button id="volun">봉사활동</button></li>
+            <li><button id="etc">기타</button></li>
+        </ul>
+    </nav>
+    <!--Carousel Wrapper-->
+    <!--Slides-->
+    <div class="carousel-inner">
+        <!--First slide-->
+        <div class="col-md-3" style="float:left">
+            <div class="card mb-2">
+                <div class="div_img">
+                    <img class="card-img-top"
+                         src="${path}/resources/front/images/item_poster.jpg" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">D-DAY</h4>
+                    <div class="card-text">
+                        <p>card_title</p><p>card_field</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3" style="float:left">
+            <div class="card mb-2">
+                <div class="div_img">
+                    <img class="card-img-top"
+                         src="${path}/resources/front/images/test_img.jpg" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">D-DAY</h4>
+                    <div class="card-text">
+                        <p>card_title</p><p>card_field</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3" style="float:left">
+            <div class="card mb-2">
+                <div class="div_img">
+                    <img class="card-img-top"
+                         src="${path}/resources/front/images/test_img2.jpg" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">D-DAY</h4>
+                    <div class="card-text">
+                        <p>card_title</p><p>card_field</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3" style="float:left">
+            <div class="card mb-2">
+                <div class="div_img">
+                    <img class="card-img-top"
+                         src="${path}/resources/front/images/test_img3.png" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">D-DAY</h4>
+                    <div class="card-text">
+                        <p>card_title</p><p>card_field</p></div>
+                </div>
+            </div>
+        </div>
+        <!--/.First slide-->
+        <!--/.Slides-->
+    </div>
+
+    <!--Slides-->
+    <div class="carousel-inner">
+        <!--First slide-->
+        <div class="col-md-3" style="float:left">
+            <div class="card mb-2">
+                <div class="div_img">
+                    <img class="card-img-top"
+                         src="${path}/resources/front/images/item_poster.jpg" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">D-DAY</h4>
+                    <div class="card-text">
+                        <p>card_title</p><p>card_field</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3" style="float:left">
+            <div class="card mb-2">
+                <div class="div_img">
+                    <img class="card-img-top"
+                         src="${path}/resources/front/images/test_img.jpg" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">D-DAY</h4>
+                    <div class="card-text">
+                        <p>card_title</p><p>card_field</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3" style="float:left">
+            <div class="card mb-2">
+                <div class="div_img">
+                    <img class="card-img-top"
+                         src="${path}/resources/front/images/test_img2.jpg" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">D-DAY</h4>
+                    <div class="card-text">
+                        <p>card_title</p><p>card_field</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3" style="float:left">
+            <div class="card mb-2">
+                <div class="div_img">
+                    <img class="card-img-top"
+                         src="${path}/resources/front/images/test_img3.png" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">D-DAY</h4>
+                    <div class="card-text">
+                        <p>card_title</p><p>card_field</p></div>
+                </div>
+            </div>
+        </div>
+        <!--/.First slide-->
+        <!--/.Slides-->
+    </div>
+
+    <div class="order"><button class="prebtn">&lt</button><button class="order_num">1</button><button class="order_num">2</button><button class="order_num">3</button><button class="order_num">4</button><button class="order_num">5</button><button class="order_num">6</button><button class="order_num">7</button><button class="order_num">8</button><button class="order_num">9</button><button class="nextbtn">&gt</button></div>
+
 </div>
-<!--First slide-->
-<div class="poster">
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="poster">
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="poster">
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="poster">
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-    <div class="slider">
-        <img class="card_img" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" width="430" height="50" alt="Card image cap">
-        <div class="card_bottom" >
-            <div class="card_title" >
-                <p>D-DAY</p><p>card_title</p><p>card_field</p>
-            </div>
-        </div>
-    </div>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="order"><button class="prebtn">&lt</button><button class="order_num">1</button><button class="order_num">2</button><button class="order_num">3</button><button class="order_num">4</button><button class="order_num">5</button><button class="order_num">6</button><button class="order_num">7</button><button class="order_num">8</button><button class="order_num">9</button><button class="nextbtn">&gt</button></div>
-<br>
-<br>
+
 <!-- footer -->
 <footer>
     <div class="container" >

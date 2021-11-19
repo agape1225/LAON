@@ -490,7 +490,7 @@ nav.main-menu {
 	color: #697087;
 }
 
-.menu-area-main li.active a {
+.menu-area-main li:active a {
 	color: #697087;
 }
 
