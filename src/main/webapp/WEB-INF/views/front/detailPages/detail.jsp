@@ -18,7 +18,7 @@
         .full blog_cont p{color:#0c1427; font-size:23px; font-weight: 500; padding-bottom: 40px;}
         html,body{width: 100%; height: 100%;}
         .detail_content{font-weight:600;}
-        .apply{width:100%; background-color: #B6BDD7; text-align: center; margin-top: 20px;}
+        .apply{width:200px; background-color: #B6BDD7; text-align: center; margin-top: 20px;}
         .apply:hover{background-color: #697087;}
     </style>
     <!-- basic -->
@@ -97,22 +97,26 @@
             <div class="col-md-6" style="color: #f0f0f0;">
                 <div class="full blog_cont" style=" float: left;">
                     <h3 class="white_font" style="font-size: 40px; float: left; ">[대외활동] 인문 360 온라인 모니터링단 1기 모집</h3>
-                    <div class="content" >
-                        <div class="window_font" style="color: #0c1427;  float: left; font-size:20px; font-weight:700; float: left; padding-top:60px;">
-                            <div>분      야</div>
-                            <div>활  동  명</div>
-                            <div>주최, 주관</div>
-                            <div>접 수 기 간</div>
-                        </div>
-                        <div class="window_infor" style="color: #0c1427;float: left; padding-left:40px;font-size:20px; font-weight:700; padding-top:60px;float: left;">
-                            <div>기타</div>
-                            <div>2021 부산국제트래블마트 서포터즈</div>
-                            <div>부산광역시/부산광역시관광협회</div>
-                            <div>2021.09.02(목) ~ 09.08(금)</div>
-                            <div class="apply" style="float: left;">
-                                <a href="https://www.besunny.com/main/sunny/notice/mainNoticeView.do" style="color: white;">apply to</a>
-                            </div>
-                        </div>
+                    <div class="content">
+                        <table style="color: #0c1427;  font-size:20px; font-weight:700; width:500px;">
+                            <tbody>
+                            <tr>
+                                <td>분      야</td><td>기타</td>
+                            </tr>
+                            <tr>
+                                <td>활  동  명</td><td>부산국제트래블마트 서포터즈</td>
+                            </tr>
+                            <tr>
+                                <td>주최, 주관</td><td>부산광역시/부산광역시관광협회</td>
+                            </tr>
+                            <tr>
+                                <td>접 수 기 간</td><td>2021.09.02(목) ~ 09.08(금)</td>
+                            </tr>
+                            <tr>
+                                <td></td><td><div class="apply"><a href="https://www.besunny.com/main/sunny/notice/mainNoticeView.do" style="color: white;">apply to</a></div></td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -153,10 +157,6 @@
                         선정발표: 9.24.(금)</p>
                 </div>
             </div>
-            <div class="col-md-6">
-
-            </div>
-
         </div>
     </div>
 </div>
